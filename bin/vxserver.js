@@ -11,6 +11,7 @@ program.version('0.0.1')
 	.option('-p,--port <port>', 'set http server port,default [8080]')
 	.option('-r,--root <directory>', 'set http server root directory,default current directory')
 program.on('--help', function () {
+	console.log(' full example : vxserver --port 8080 --root D:\\webapp\static');
 	console.log(' please email to x373241884y@email.com');
 	console.log(' QQ:373241884');
 });
@@ -19,7 +20,7 @@ program.parse(process.argv);
 
 function start() {
 	var config = {
-		port: program.port || 8080,
+		port: program.port || 9001,
 		root: program.root || cwd
 	};
 	console.log('use config:\n'+JSON.stringify(config,null,4));

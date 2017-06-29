@@ -13,7 +13,7 @@ var app = connect();
 	app.use(ecstatic({
 		root: config.root,
 		autoIndex: true,
-		cache: false
+		cache: 'no-cache'
 	}));
 	app.use(proxyLocalJson({jsonPath: path.join(config.root, 'data')}));
 	app.listen(config.port);

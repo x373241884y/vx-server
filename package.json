@@ -1,6 +1,6 @@
 {
   "name": "vx-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "test server for csii vx team",
   "main": "index.js",
   "scripts": {

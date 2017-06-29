@@ -1,16 +1,20 @@
 var path = require('path');
-var connnect = require('connect');
-var serveStatic = require('serve-static');
+var connect = require('connect');
+var ecstatic = require('ecstatic');
 var proxyLocalJson = require('./lib/proxyLocalJson');
-
+var logger = require('./lib/logger');
 module.exports = vxServer;
-
 function vxServer(config) {
-	var app = connnect();
-	app.use(serveStatic(config.root,{
-		index:false
+var app = connect();
+	// var app = express();
+	app.use(require('morgan')('dev',{"stream": logger.stream}));
+	app.use(ecstatic({
+		root: config.root,
+		autoIndex: true,
+		cache: false
 	}));
 	app.use(proxyLocalJson({jsonPath: path.join(config.root, 'data')}));
 	app.listen(config.port);
-	console.log('vxserver start at http://127.0.0.1:' + config.port);
+	logger.info('vxserver start at http://127.0.0.1:' + config.port);
 }
+

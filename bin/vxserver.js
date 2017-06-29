@@ -6,7 +6,7 @@ var fs = require('fs');
 var path = require('path');
 var main = require('../');
 var cwd = process.cwd();
-program.version('0.0.2')
+program.version('0.0.3')
 	.usage('[options] <port|directory>')
 	.option('-p,--port <port>', 'set http server port,default [8080]')
 	.option('-r,--root <directory>', 'set http server root directory,default current directory')

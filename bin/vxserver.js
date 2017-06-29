@@ -20,10 +20,10 @@ program.parse(process.argv);
 
 function start() {
 	var config = {
-		port: program.port || 9001,
+		port: program.port || 8080,
 		root: program.root || cwd
 	};
-	console.log('use config:\n'+JSON.stringify(config,null,4));
+	console.log('using config:\n'+JSON.stringify(config,null,4));
 	main(config);
 }
 

@@ -3,7 +3,9 @@ var connect = require('connect');
 var ecstatic = require('ecstatic');
 var proxyLocalJson = require('./lib/proxyLocalJson');
 var logger = require('./lib/logger');
+
 module.exports = vxServer;
+
 function vxServer(config) {
 var app = connect();
 	// var app = express();

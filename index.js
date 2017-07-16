@@ -15,6 +15,7 @@ var app = connect();
 		autoIndex: true,
 		cache: 'no-cache'
 	}));
+	require('./lib/proxyConfig')(app, config);
 	app.use(proxyLocalJson({jsonPath: path.join(config.root, 'data')}));
 	app.listen(config.port);
 	logger.info('vxserver start at http://127.0.0.1:' + config.port);
